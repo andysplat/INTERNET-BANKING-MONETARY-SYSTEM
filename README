@@ -1,0 +1,10 @@
+Pentru implementarea temei, am facut serverul in C++, deoarece m-am folosit de functiile ajutatoare, mai ales pentru vectori. 
+Pentru a salva clientii folosesc un vector de tip client. 
+Daca clientul nu este logat orice comanda primeste, cu exceptia quit sau unlock acesta v-a retuna -1 (+ mesajul aferent codului de eroare). Daca acesta este logat si primeste o comanda invalida acesta va returna -6(+ mesajul aferent codului de eroare). 
+Pentru login verific mai intai daca exista cardul, daca nu, returnez -4 (+ mesajul aferent codului de eroare), daca da, compar pinul primit cu cel al cardului gasit in vecotrul de clienti, iar daca sunt egale retunez "Welcome ...", iar daca nu -3 (+ mesajul aferent codului de eroare). 
+Pentru logout, caut clientul_bancar aferent clientului_server pentru care am primit comanda, si ii sterg toate aparitiile, bazata pe pozitia returnata prin cautare.
+Pentru listsold, caut clientul_bancar aferent clientul_server pentru care am primit comanda, si iau soldul de pe pozitia gasita din vecorul de clienti
+Pentru transfer, am reusit sa implementez astfel incat sa pot face in paralel operatia de mai multi clienti fara a raspunde imediat la intrebare pusa de server, salvand intr-un vector de transferuri persoana care trebuie sa primeasca banii si suma ce trebui transferata. 
+Pentru unlock, retin cardul aferent ultimului login, la fael ca la transfer am implementat operatia pentru a fi facuta in paralel de mai multi clienti. 
+Pentru quit, la sever inainte de inchiderea programului, trimit un mesaj fiecarui client_server pentru a le inchide.
+Pentru quit, la client inainte de inchiderea programului trimi un mesaj la server.
